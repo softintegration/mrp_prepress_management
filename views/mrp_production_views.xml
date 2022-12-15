@@ -11,6 +11,7 @@
                 </xpath>
             </field>
         </record>
+
          <record id="mrp_production_tree_view_inherited" model="ir.ui.view">
             <field name="name">mrp.production.tree.view.inherited</field>
             <field name="model">mrp.production</field>
@@ -21,5 +22,21 @@
                 </xpath>
             </field>
         </record>
+
+        <record id="view_mrp_production_filter_inherited" model="ir.ui.view">
+            <field name="name">view.mrp.production.filter.inherited</field>
+            <field name="model">mrp.production</field>
+            <field name="inherit_id" ref="mrp.view_mrp_production_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='product_id']" position="after">
+                    <field name="prepress_proof_id"  force_save="1"/>
+                </xpath>
+                <xpath expr="//filter[@name='product']" position="after">
+                    <filter string="Prepress Proof" name="prepress_proof_id" domain="[]" context="{'group_by': 'prepress_proof_id'}"/>
+                </xpath>
+            </field>
+        </record>
+
+
 
 </odoo>

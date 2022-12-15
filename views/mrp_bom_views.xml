@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <record id="mrp_bom_form_view_inherited" model="ir.ui.view">
+            <field name="name">mrp.bom.form.view.inherited</field>
+            <field name="model">mrp.bom</field>
+            <field name="inherit_id" ref="mrp.mrp_bom_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//label[@for='product_qty']" position="before">
+                    <field name="prepress_proof_id"  force_save="1"/>
+                </xpath>
+            </field>
+        </record>
+
+         <record id="mrp_bom_tree_view_inherited" model="ir.ui.view">
+            <field name="name">mrp.bom.tree.view.inherited</field>
+            <field name="model">mrp.bom</field>
+            <field name="inherit_id" ref="mrp.mrp_bom_tree_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='product_tmpl_id']" position="after">
+                    <field name="prepress_proof_id" />
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_mrp_bom_filter_inherited" model="ir.ui.view">
+            <field name="name">view.mrp.bom.filter.inherited</field>
+            <field name="model">mrp.bom</field>
+            <field name="inherit_id" ref="mrp.view_mrp_bom_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='product_tmpl_id']" position="after">
+                    <field name="prepress_proof_id"  force_save="1"/>
+                </xpath>
+                <xpath expr="//filter[@name='product']" position="after">
+                    <filter string="Prepress Proof" name="prepress_proof_id" domain="[]" context="{'group_by': 'prepress_proof_id'}"/>
+                </xpath>
+            </field>
+        </record>
+
+</odoo>

@@ -20,7 +20,7 @@ class MrpProduction(models.Model):
         if not self.product_id:
             return
         prepress_proof = self.env['prepress.proof']._get_by_product(self.product_id)
-        self.update({'prepress_proof_id': prepress_proof and prepress_proof.id or False})
+        self.update({'prepress_proof_id': prepress_proof and prepress_proof.ids[0] or False})
 
     @api.model
     def create(self,vals):
@@ -28,7 +28,7 @@ class MrpProduction(models.Model):
         for order in production_orders:
             if not order.prepress_proof_id:
                 prepress_proof = self.env['prepress.proof']._get_by_product(order.product_id)
-                order.prepress_proof_id = prepress_proof and prepress_proof.id or False
+                order.prepress_proof_id = prepress_proof and prepress_proof.ids[0] or False
         return production_orders
 
 
