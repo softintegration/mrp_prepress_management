@@ -8,6 +8,7 @@
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='product_id']" position="after">
                     <field name="prepress_proof_id"  force_save="1"/>
+                    <field name="prepress_proof_client_ref"/>
                 </xpath>
             </field>
         </record>
@@ -19,6 +20,7 @@
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='product_id']" position="after">
                     <field name="prepress_proof_id"  force_save="1"/>
+                    <field name="prepress_proof_client_ref"/>
                 </xpath>
             </field>
         </record>
@@ -29,7 +31,8 @@
             <field name="inherit_id" ref="mrp.view_mrp_production_filter"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='product_id']" position="after">
-                    <field name="prepress_proof_id"  force_save="1"/>
+                    <field name="prepress_proof_id"/>
+                    <field name="prepress_proof_client_ref"/>
                 </xpath>
                 <xpath expr="//filter[@name='product']" position="after">
                     <filter string="Prepress Proof" name="prepress_proof_id" domain="[]" context="{'group_by': 'prepress_proof_id'}"/>

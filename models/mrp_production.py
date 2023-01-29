@@ -9,6 +9,8 @@ class MrpProduction(models.Model):
     _inherit = 'mrp.production'
 
     prepress_proof_id = fields.Many2one('prepress.proof',string='Prepress proof',readonly=True)
+    prepress_proof_client_ref = fields.Char(string='Customer Prepress proof reference',
+                                            related='prepress_proof_id.client_ref')
 
     @api.onchange('product_id', 'picking_type_id', 'company_id')
     def _onchange_product_id(self):
