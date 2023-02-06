@@ -8,6 +8,7 @@
             <field name="arch" type="xml">
                 <xpath expr="//label[@for='product_qty']" position="before">
                     <field name="prepress_proof_id"  force_save="1"/>
+                    <field name="cutting_die_id"  options="{'no_create_edit': True}"/>
                 </xpath>
             </field>
         </record>
@@ -19,6 +20,7 @@
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='product_tmpl_id']" position="after">
                     <field name="prepress_proof_id" />
+                    <field name="cutting_die_id"  options="{'no_create_edit': True}"/>
                 </xpath>
             </field>
         </record>
@@ -30,9 +32,11 @@
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='product_tmpl_id']" position="after">
                     <field name="prepress_proof_id"  force_save="1"/>
+                    <field name="cutting_die_id"  options="{'no_create_edit': True}"/>
                 </xpath>
                 <xpath expr="//filter[@name='product']" position="after">
                     <filter string="Prepress Proof" name="prepress_proof_id" domain="[]" context="{'group_by': 'prepress_proof_id'}"/>
+                    <filter string="Cutting Die" name="cutting_die_id" domain="[]" context="{'group_by': 'cutting_die_id'}"/>
                 </xpath>
             </field>
         </record>

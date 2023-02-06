@@ -8,6 +8,7 @@ class MrpBom(models.Model):
     _inherit = 'mrp.bom'
 
     prepress_proof_id = fields.Many2one('prepress.proof',string='Prepress proof',readonly=True)
+    cutting_die_id = fields.Many2one('prepress.cutting.die', string="Cutting Die")
 
     @api.onchange('product_id')
     def _onchange_product_id(self):
