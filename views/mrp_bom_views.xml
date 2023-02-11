@@ -9,6 +9,7 @@
                 <xpath expr="//label[@for='product_qty']" position="before">
                     <field name="prepress_proof_id"  force_save="1"/>
                     <field name="cutting_die_id"  options="{'no_create_edit': True}"/>
+                    <field name="exposure_nbr"/>
                 </xpath>
             </field>
         </record>
@@ -21,6 +22,7 @@
                 <xpath expr="//field[@name='product_tmpl_id']" position="after">
                     <field name="prepress_proof_id" />
                     <field name="cutting_die_id"  options="{'no_create_edit': True}"/>
+                    <field name="exposure_nbr" optional="hide"/>
                 </xpath>
             </field>
         </record>
