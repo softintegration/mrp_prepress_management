@@ -9,7 +9,7 @@ class MrpBom(models.Model):
 
     prepress_proof_id = fields.Many2one('prepress.proof',string='Prepress proof',readonly=True)
     cutting_die_id = fields.Many2one('prepress.cutting.die', string="Cutting Die")
-    exposure_nbr = fields.Integer('Exposure Nbr', related='cutting_die_id.exposure_nbr', readonly=True,store=True)
+    exposure_nbr = fields.Integer('Exposure Nbr', related='cutting_die_id.exposure_nbr', readonly=False,store=True)
 
     @api.onchange('product_id')
     def _onchange_product_id(self):
