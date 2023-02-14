@@ -45,7 +45,11 @@ class MrpBom(models.Model):
         return mrp_boms
 
 
-
+    @api.constrains('exposure_nbr','cutting_die_id')
+    def _check_exposure_nbr(self):
+        for each in self.filtered(lambda e:e.cutting_die_id and e.exposure_nbr):
+            if each.exposure_nbr > each.cutting_die_id.exposure_nbr:
+                raise ValidationError(_("Exposure Nbr must be less than or equal to Cutting die Exposure Nbr"))
 
 
 
