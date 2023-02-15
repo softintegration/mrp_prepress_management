@@ -53,7 +53,22 @@ class MrpBom(models.Model):
 
 
 
+class MrpByProduct(models.Model):
+    _inherit = 'mrp.bom.byproduct'
 
+    prepress_proof_id = fields.Many2one('prepress.proof',string='Prepress proof')
+
+    @api.onchange('product_id')
+    def _onchange_product_id(self):
+        res = super(MrpByProduct,self)._onchange_product_id()
+        self._update_prepress_proof()
+        return res
+
+    def _update_prepress_proof(self):
+        if not self.product_id:
+            return
+        prepress_proof = self.env['prepress.proof']._get_by_product(self.product_id)
+        self.update({'prepress_proof_id': prepress_proof and prepress_proof.ids[0] or False})
 
 
 
