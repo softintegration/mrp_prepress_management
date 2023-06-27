@@ -11,6 +11,17 @@ class MrpProduction(models.Model):
     prepress_proof_id = fields.Many2one('prepress.proof',string='Prepress proof',readonly=True)
     prepress_proof_client_ref = fields.Char(string='Customer Prepress proof reference',
                                             related='prepress_proof_id.client_ref')
+    draw_nbr = fields.Float(string='Draw',compute='_compute_draw_nbr')
+
+
+    @api.depends('product_qty','bom_id.exposure_nbr')
+    def _compute_draw_nbr(self):
+        for each in self:
+            if each.bom_id and each.bom_id.exposure_nbr:
+                each.draw_nbr = each.product_qty/each.bom_id.exposure_nbr
+            else:
+                each.draw_nbr = False
+
 
     @api.onchange('product_id', 'picking_type_id', 'company_id')
     def _onchange_product_id(self):
