@@ -10,13 +10,14 @@
     'qweb': [],
     'description': False,
     'images': [],
-    'version': '1.0.1.9',
+    'version': '1.0.1.10',
     'category': 'Prepress/Manufacturing',
     'demo': [],
     'depends': ['mrp','prepress_management'],
     'data': [
         'views/mrp_production_views.xml',
-        'views/mrp_bom_views.xml'
+        'views/mrp_bom_views.xml',
+        'views/mrp_routing_views.xml'
     ],
     'license': 'LGPL-3',
 }
