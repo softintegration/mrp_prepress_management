@@ -8,10 +8,22 @@
             <field name="inherit_id" ref="maintenance.hr_equipment_view_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='note']" position="before">
-                    <span name="is_printer">
-                        <field name="is_printer" widget="boolean_toggle"/>
+                    <group>
+                        <group>
+                             <field name="is_printer" widget="boolean_toggle"/>
+                        </group>
+                        <group>
+                              <field name="color_cpt"/>
+                        </group>
+                    </group>
+                    <!--<span name="is_printer">
                         <label for="is_printer"/>
                     </span>
+                    <span name="color_cpt">
+                        <label for="color_cpt"/>
+
+                    </span>-->
+
                 </xpath>
             </field>
         </record>

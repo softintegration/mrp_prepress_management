@@ -13,3 +13,4 @@ class MaintenanceEquipment(models.Model):
     _inherit = 'maintenance.equipment'
 
     is_printer = fields.Boolean(string='Is printer',default=False)
+    color_cpt = fields.Integer(string='Number of Colors')
