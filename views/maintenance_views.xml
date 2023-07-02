@@ -13,7 +13,7 @@
                              <field name="is_printer" widget="boolean_toggle"/>
                         </group>
                         <group>
-                              <field name="color_cpt"/>
+                              <field name="color_cpt" attrs="{'invisible':[('is_printer','=',False)]}"/>
                         </group>
                     </group>
                     <!--<span name="is_printer">
