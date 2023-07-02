@@ -2,6 +2,7 @@
 
 from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
+import math
 
 
 class MrpProduction(models.Model):
@@ -18,7 +19,8 @@ class MrpProduction(models.Model):
     def _compute_draw_nbr(self):
         for each in self:
             if each.bom_id and each.bom_id.exposure_nbr:
-                each.draw_nbr = each.product_qty/each.bom_id.exposure_nbr
+                not_rounded_draw_nbr = each.product_qty/each.bom_id.exposure_nbr
+                each.draw_nbr = math.ceil(not_rounded_draw_nbr)
             else:
                 each.draw_nbr = False
 
