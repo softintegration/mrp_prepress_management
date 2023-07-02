@@ -8,6 +8,13 @@ from odoo.tools import float_round
 class MrpWorkorder(models.Model):
     _inherit = 'mrp.workorder'
 
+    #passes_nbr = fields.Integer(string='Number of passes',compute='_compute_passes_nbr')
+
+    #@api.depends('product_id.color_cpt','workcenter_id')
+    #def _compute_passes_nbr(self):
+
+
+
     def _get_duration_expected(self, alternative_workcenter=False, ratio=1):
         self.ensure_one()
         if not self.workcenter_id:
