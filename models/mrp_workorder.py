@@ -3,15 +3,25 @@
 from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
 from odoo.tools import float_round
+import math
 
 
 class MrpWorkorder(models.Model):
     _inherit = 'mrp.workorder'
 
-    #passes_nbr = fields.Integer(string='Number of passes',compute='_compute_passes_nbr')
+    passes_nbr = fields.Integer(string='Number of passes',compute='_compute_passes_nbr')
+    is_printer = fields.Boolean(related='workcenter_id.equipment_id.is_printer')
 
-    #@api.depends('product_id.color_cpt','workcenter_id')
-    #def _compute_passes_nbr(self):
+    @api.depends('product_id.color_cpt','workcenter_id.equipment_id.color_cpt')
+    def _compute_passes_nbr(self):
+        for each in self:
+            if each.workcenter_id.equipment_id and each.workcenter_id.equipment_id.is_printer:
+                not_rounded_passes_nbr = each.product_id.color_cpt/(each.workcenter_id.equipment_id.color_cpt or 1)
+                each.passes_nbr = math.ceil(not_rounded_passes_nbr)
+            else:
+                each.passes_nbr = 1
+
+
 
 
 
