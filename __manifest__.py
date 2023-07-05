@@ -10,7 +10,7 @@
     'qweb': [],
     'description': False,
     'images': [],
-    'version': '1.0.1.17',
+    'version': '1.0.1.18',
     'category': 'Prepress/Manufacturing',
     'demo': [],
     'depends': ['mrp','prepress_management','mrp_maintenance'],
