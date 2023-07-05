@@ -10,7 +10,7 @@
     'qweb': [],
     'description': False,
     'images': [],
-    'version': '1.0.1.18',
+    'version': '1.0.1.19',
     'category': 'Prepress/Manufacturing',
     'demo': [],
     'depends': ['mrp','prepress_management','mrp_maintenance'],
@@ -18,8 +18,6 @@
         'views/mrp_production_views.xml',
         'views/mrp_bom_views.xml',
         'views/mrp_routing_views.xml',
-        'views/maintenance_views.xml',
-        'views/mrp_workorder_views.xml'
     ],
     'license': 'LGPL-3',
 }

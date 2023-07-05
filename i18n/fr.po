@@ -57,26 +57,16 @@ msgstr "Nombre de pose"
 msgid "Exposure Nbr must be less than or equal to Cutting die Exposure Nbr"
 msgstr ""
 
-#. module: mrp_prepress_management
-#: model:ir.model.fields,field_description:mrp_prepress_management.field_maintenance_equipment__is_printer
-#: model:ir.model.fields,field_description:mrp_prepress_management.field_mrp_workorder__is_printer
-msgid "Is printer"
-msgstr "Est une imprimante"
+
 
 #. module: mrp_prepress_management
 #: model:ir.model,name:mrp_prepress_management.model_maintenance_equipment
 msgid "Maintenance Equipment"
 msgstr "Equipement de maintenance"
 
-#. module: mrp_prepress_management
-#: model:ir.model.fields,field_description:mrp_prepress_management.field_maintenance_equipment__color_cpt
-msgid "Number of Colors"
-msgstr "Nombre de couleur"
 
-#. module: mrp_prepress_management
-#: model:ir.model.fields,field_description:mrp_prepress_management.field_mrp_workorder__passes_nbr
-msgid "Number of passes"
-msgstr "Nombre de passage"
+
+
 
 #. module: mrp_prepress_management
 #: model_terms:ir.ui.view,arch_db:mrp_prepress_management.view_mrp_bom_filter_inherited
