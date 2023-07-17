@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <!-- Mrp workorder form view inherited-->
+
+    <record id="mrp_production_workorder_form_view_inherit_inherited" model="ir.ui.view">
+        <field name="name">mrp.production.workorder.form.view.inherit.inherited</field>
+        <field name="model">mrp.workorder</field>
+        <field name="inherit_id" ref="mrp.mrp_production_workorder_form_view_inherit"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='production_id']" position="before">
+                <field name="partner_id"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="mrp_production_workorder_tree_editable_view_inherited" model="ir.ui.view">
+        <field name="name">mrp.production.workorder.tree.editable.view.inherited</field>
+        <field name="model">mrp.workorder</field>
+        <field name="inherit_id" ref="mrp.mrp_production_workorder_tree_editable_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_id']" position="after">
+                <field name="partner_id" optional="show"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_mrp_production_workorder_form_view_filter_inherited" model="ir.ui.view">
+        <field name="name">view.mrp.production.workorder.form.view.filter.inherited</field>
+        <field name="model">mrp.workorder</field>
+        <field name="inherit_id" ref="mrp.view_mrp_production_workorder_form_view_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='production_id']" position="after">
+                <field name="partner_id"/>
+            </xpath>
+            <xpath expr="//filter[@name='production']" position="after">
+                <filter string="Customer" name="customer" domain="[]" context="{'group_by': 'partner_id'}"/>
+            </xpath>
+        </field>
+    </record>
+
+
+
+
+</odoo>

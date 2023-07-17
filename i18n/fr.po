@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-02 23:50+0000\n"
-"PO-Revision-Date: 2023-07-02 23:50+0000\n"
+"POT-Creation-Date: 2023-07-17 17:18+0000\n"
+"PO-Revision-Date: 2023-07-17 17:18+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -24,6 +24,12 @@ msgstr "Nomenclature"
 #: model:ir.model,name:mrp_prepress_management.model_mrp_bom_byproduct
 msgid "Byproduct"
 msgstr "Sous-produit"
+
+#. module: mrp_prepress_management
+#: model:ir.model.fields,field_description:mrp_prepress_management.field_mrp_workorder__partner_id
+#: model_terms:ir.ui.view,arch_db:mrp_prepress_management.view_mrp_production_workorder_form_view_filter_inherited
+msgid "Customer"
+msgstr "Client"
 
 #. module: mrp_prepress_management
 #: model:ir.model.fields,field_description:mrp_prepress_management.field_mrp_production__prepress_proof_client_ref
@@ -57,16 +63,10 @@ msgstr "Nombre de pose"
 msgid "Exposure Nbr must be less than or equal to Cutting die Exposure Nbr"
 msgstr ""
 
-
-
 #. module: mrp_prepress_management
-#: model:ir.model,name:mrp_prepress_management.model_maintenance_equipment
-msgid "Maintenance Equipment"
-msgstr "Equipement de maintenance"
-
-
-
-
+#: model:ir.model.fields,field_description:mrp_prepress_management.field_mrp_workorder__planning_id
+msgid "Planning"
+msgstr ""
 
 #. module: mrp_prepress_management
 #: model_terms:ir.ui.view,arch_db:mrp_prepress_management.view_mrp_bom_filter_inherited
