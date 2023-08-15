@@ -19,6 +19,7 @@
             </field>
         </record>
 
+
          <record id="mrp_production_tree_view_inherited" model="ir.ui.view">
             <field name="name">mrp.production.tree.view.inherited</field>
             <field name="model">mrp.production</field>
@@ -42,6 +43,7 @@
                 </xpath>
                 <xpath expr="//filter[@name='product']" position="after">
                     <filter string="Prepress Proof" name="prepress_proof_id" domain="[]" context="{'group_by': 'prepress_proof_id'}"/>
+                    <filter string="Product type" name="prepress_type" domain="[]" context="{'group_by': 'prepress_type'}"/>
                 </xpath>
             </field>
         </record>

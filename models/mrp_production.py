@@ -13,6 +13,7 @@ class MrpProduction(models.Model):
     prepress_proof_client_ref = fields.Char(string='Customer Prepress proof reference',
                                             related='prepress_proof_id.client_ref')
     draw_nbr = fields.Integer(string='Draw',compute='_compute_draw_nbr')
+    prepress_type = fields.Many2one(related='product_id.prepress_type',store=True)
 
 
     @api.depends('product_qty','bom_id.exposure_nbr')
