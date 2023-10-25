@@ -4,6 +4,8 @@ from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
 import math
 
+# if the related prepress proof are in one of this states,we have to prevent the confirming of the manufacturing order,
+AVOIDED_CONFIRM_RELATED_PROOFS_STATES = ['in_progress','quarantined','cancel']
 
 class MrpProduction(models.Model):
     """ Manufacturing Orders """
@@ -47,6 +49,14 @@ class MrpProduction(models.Model):
                 order.prepress_proof_id = prepress_proof and prepress_proof.ids[0] or False
         return production_orders
 
+    def action_confirm(self):
+        self._check_prepress_proofs()
+        return super(MrpProduction,self).action_confirm()
+
+    def _check_prepress_proofs(self):
+        for each in self:
+            if each.prepress_proof_id and each.prepress_proof_id.state in AVOIDED_CONFIRM_RELATED_PROOFS_STATES:
+                raise ValidationError(_("Can not confirm the Manufacturing order %s,the related proof must be Validated or Flashed!")%each.name)
 
 
 
