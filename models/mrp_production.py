@@ -14,7 +14,7 @@ class MrpProduction(models.Model):
     prepress_proof_id = fields.Many2one('prepress.proof',string='Prepress proof',readonly=True)
     prepress_proof_client_ref = fields.Char(string='Customer Prepress proof reference',
                                             related='prepress_proof_id.client_ref')
-    draw_nbr = fields.Integer(string='Draw',compute='_compute_draw_nbr')
+    draw_nbr = fields.Integer(string='Draw',compute='_compute_draw_nbr',store=True)
     prepress_type = fields.Many2one(related='product_id.prepress_type',store=True)
 
 

@@ -63,7 +63,7 @@ msgid "Cutting Die"
 msgstr "Forme de découpe"
 
 #. module: mrp_prepress_management
-#: model:ir.model.fields,field_description:mrp_prepress_management.field_mrp_production__draw_nbr
+#: model:ir.model.fields,field_description:mrp_prepress_management.field_mrp_production__œ
 msgid "Draw"
 msgstr "Tirage"
 

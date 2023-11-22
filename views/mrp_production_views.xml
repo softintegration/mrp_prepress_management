@@ -20,6 +20,8 @@
         </record>
 
 
+
+
          <record id="mrp_production_tree_view_inherited" model="ir.ui.view">
             <field name="name">mrp.production.tree.view.inherited</field>
             <field name="model">mrp.production</field>
@@ -49,5 +51,20 @@
         </record>
 
 
+
+
+        <record id="view_production_graph_inherited" model="ir.ui.view">
+            <field name="name">view.production.graph.inherited</field>
+            <field name="model">mrp.production</field>
+            <field name="inherit_id" ref="mrp.view_production_graph"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='product_uom_qty']" position="after">
+                    <field name="draw_nbr" type="measure"/>
+                </xpath>
+                <xpath expr="//graph" position="attributes">
+                    <attribute name="stacked">1</attribute>
+                </xpath>
+            </field>
+        </record>
 
 </odoo>
