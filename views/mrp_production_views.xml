@@ -61,9 +61,6 @@
                 <xpath expr="//field[@name='product_uom_qty']" position="after">
                     <field name="draw_nbr" type="measure"/>
                 </xpath>
-                <xpath expr="//graph" position="attributes">
-                    <attribute name="stacked">1</attribute>
-                </xpath>
             </field>
         </record>
 

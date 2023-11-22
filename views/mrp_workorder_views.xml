@@ -40,6 +40,16 @@
         </field>
     </record>
 
+    <record id="workcenter_line_graph_inherited" model="ir.ui.view">
+            <field name="name">workcenter.line.graph.inherited</field>
+            <field name="model">mrp.workorder</field>
+            <field name="inherit_id" ref="mrp.workcenter_line_graph"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='duration_expected']" position="after">
+                    <field name="draw_nbr" type="measure"/>
+                </xpath>
+            </field>
+        </record>
 
 
 

@@ -13,6 +13,7 @@ class MrpWorkorder(models.Model):
 
     planning_id = fields.Many2one('mrp.production.planning')
     partner_id = fields.Many2one(related='product_id.partner_id', string='Customer',store=True,readonly=True)
+    draw_nbr = fields.Integer(string='Draw', related='production_id.draw_nbr', store=True)
 
     def button_start(self):
         self._check_manufacturing_order_proof()
