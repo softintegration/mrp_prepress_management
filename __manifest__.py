@@ -10,11 +10,12 @@
     'qweb': [],
     'description': False,
     'images': [],
-    'version': '1.0.1.25',
+    'version': '1.0.1.26',
     'category': 'Prepress/Manufacturing',
     'demo': [],
     'depends': ['mrp','prepress_management','mrp_maintenance'],
     'data': [
+        'security/ir.model.access.csv',
         'views/mrp_production_views.xml',
         'views/mrp_bom_views.xml',
         'views/mrp_routing_views.xml',

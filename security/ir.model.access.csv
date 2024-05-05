@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_mrp_bom,mrp.bom,mrp.model_mrp_bom,prepress_management.group_prepress_user,1,0,0,0
+access_mrp_bom_line,mrp.bom.line,mrp.model_mrp_bom_line,prepress_management.group_prepress_user,1,0,0,0
+access_stock_move_prepress,access.stock.move.prepress,stock.model_stock_move,prepress_management.group_prepress_user,1,0,0,0
